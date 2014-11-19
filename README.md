@@ -184,5 +184,5 @@ Output:
 TODO
 ============
 
-* Add support for more platforms (Google Plus etc)
+* Add support for more platforms (Google Plus, Pinterest etc)
 

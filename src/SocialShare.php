@@ -73,9 +73,9 @@ class SocialShare
         if($result === null)
 			throw new SocialShare_Error('We were unable to decode the JSON response from the SocialShare API: ' . $response_body);
         
-        if(floor($info['http_code'] / 100) >= 4)
+        if($info['http_code'] != 200)
 		{
-            throw $this->castError($result);
+            throw new SocialShare_Error('We received an unexpected error');
         }
 
         return $result;
@@ -90,12 +90,6 @@ class SocialShare
             return $values;
         else
             return false;
-    }
-
-    public function castError($result)
-	{
-        if($result['status'] !== 'error' || !$result['name'])
-			throw new SocialShare_Error('We received an unexpected error: ' . json_encode($result));
     }
 
     public function log($msg)

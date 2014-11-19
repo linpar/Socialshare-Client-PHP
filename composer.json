@@ -5,7 +5,7 @@
     "description": "Client library for the Social Share API",
     "keywords": ["social", "share", "api"],
     "homepage": "https://github.com/linpar/Socialshare-Client-Php",
-    "license": "OGL",
+    "license": "MIT",
     "authors": [{
         "name": "Nitish Gundherva",
         "email": "nitish.gundherva@nsitonline.in",

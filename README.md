@@ -2,13 +2,55 @@ SocialShare API PHP Client
 ======================
 
 Features
-============at
+============
 * Support for Facebook.
 * Support for Twitter.
 * Fetch data for multiple URLs.
 * Fetch total number of shares/comments/clicks/likes of multiple URLs on Facebook.
 * Fetch combined total number of shares/comments/clicks/likes of multiple URLs on Facebook.
 * Fetch total number of shares of multiple URLs on Twitter.
+
+Easy Installation
+============
+Install with git
+---
+From the command line switch to the directory where dompdf will reside and run
+the following commands:
+
+```sh
+git clone https://github.com/linpar/Socialshare-Client-PHP.git
+git submodule init
+git submodule update
+```
+
+Install with composer
+---
+To install with Composer, simply add the requirement to your `composer.json`
+file:
+
+```json
+{
+  "require" : {
+    "linpar/socialshare": "dev-master"
+  }
+}
+```
+
+And run Composer to update your dependencies:
+
+```bash
+$ curl -sS http://getcomposer.org/installer | php
+$ php composer.phar update
+```
+
+Before you can use the Composer installation of SocialShare in your application you
+must include the Composer autoloader
+
+```php
+// somewhere early in your project's loading, require the Composer autoloader
+// see: http://getcomposer.org/doc/00-intro.md
+require 'vendor/autoload.php';
+```
 
 Simple example
 ============
@@ -137,50 +179,6 @@ Output:
 1807874
 1545368
 ```
-
-
-Easy Installation
-============
-Install with git
----
-From the command line switch to the directory where dompdf will reside and run
-the following commands:
-
-```sh
-git clone https://github.com/linpar/Socialshare-Client-PHP.git
-git submodule init
-git submodule update
-```
-
-Install with composer
----
-To install with Composer, simply add the requirement to your `composer.json`
-file:
-
-```json
-{
-  "require" : {
-    "linpar/socialshare": "dev-master"
-  }
-}
-```
-
-And run Composer to update your dependencies:
-
-```bash
-$ curl -sS http://getcomposer.org/installer | php
-$ php composer.phar update
-```
-
-Before you can use the Composer installation of SocialShare in your application you
-must include the Composer autoloader
-
-```php
-// somewhere early in your project's loading, require the Composer autoloader
-// see: http://getcomposer.org/doc/00-intro.md
-require 'vendor/autoload.php';
-```
-
 
 TODO
 ============

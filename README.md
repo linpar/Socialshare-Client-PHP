@@ -25,12 +25,12 @@ Array
 
 Check out [composer](http://www.getcomposer.org) for details about installing and running composer.
 
-Then, add `linkorb/socialshare` to your project's `composer.json`:
+Then, add `linpar/socialshare` to your project's `composer.json`:
 
 ```json
 {
     "require": {
-        "linkorb/socialshare": "dev-master"
+        "linpar/socialshare": "dev-master"
     }
 }
 ```

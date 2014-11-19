@@ -1,5 +1,6 @@
 SocialShare API PHP Client
-======================
+==========================
+SocialShare API can be used to fetch number of shares for a single or multiple URLs on social platforms.
 
 Features
 ============

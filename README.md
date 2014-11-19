@@ -5,7 +5,8 @@ SocialShare API PHP Client
 
 ```php
 $socialShare = new SocialShare();
-var_dump($socialShare->facebook->shares(arrya('http://github.com')));
+print_r('<pre>');
+print_r($socialShare->facebook->shares(arrya('http://github.com')));
 ```
 Output:
 

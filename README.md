@@ -55,7 +55,7 @@ require 'vendor/autoload.php';
 
 Simple example
 ============
-1. Fetch number of shares/click/comments/likes of a URL on Facebook/Twitter (in case of shares).
+1) Fetch number of shares/click/comments/likes of a URL on Facebook/Twitter (in case of shares).
 ```php
 $socialShare = new SocialShare();
 print_r('<pre>');
@@ -89,7 +89,7 @@ Array
 )
 ```
 
-2. Fetch number of shares/click/comments/likes of multiple URLs on Facebook/Twitter (in case of shares).
+2) Fetch number of shares/click/comments/likes of multiple URLs on Facebook/Twitter (in case of shares).
 ```php
 $socialShare = new SocialShare();
 print_r('<pre>');
@@ -163,7 +163,7 @@ Array
 )
 ```
 
-3. Fetch combined total number of shares/clicks/comments/likes of multiple URLs on Facebook/Twitter (in case of shares).
+3) Fetch combined total number of shares/clicks/comments/likes of multiple URLs on Facebook/Twitter (in case of shares).
 ```php
 $socialShare = new SocialShare();
 print_r('<pre>');

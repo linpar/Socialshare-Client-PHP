@@ -7,8 +7,13 @@ require_once 'SocialShare/Twitter.php';
 class SocialShare
 {
 
+    // cURL variable
     public $ch;
+
+    // Root of the API
     public $root = 'http://socialshare.nitishgundherva.me/api/v1/';
+
+    // Debug
     public $debug = false;
 
     public function __construct()
@@ -30,6 +35,14 @@ class SocialShare
         curl_close($this->ch);
     }
 
+    /**
+     * @param $url
+     * @param $params
+     * @param bool $post
+     * @return string
+     * @throws SocialShare_HttpError
+     * @throws SocialShare_Error
+     */
     public function call($url, $params, $post = false)
 	{
         $ch = $this->ch;
@@ -80,8 +93,12 @@ class SocialShare
 
         return $result;
     }
-	
-	public static function commaSeparated($string = '')
+
+    /**
+     * @param string $string
+     * @return array|bool
+     */
+    public static function commaSeparated($string = '')
     {
         $values = explode(',', $string);
         $values = array_filter($values);
@@ -92,6 +109,9 @@ class SocialShare
             return false;
     }
 
+    /**
+     * @param $msg
+     */
     public function log($msg)
 	{
         if($this->debug)

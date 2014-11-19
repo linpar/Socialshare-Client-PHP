@@ -1,11 +1,20 @@
 <?php
 
+/**
+ * Class SocialShare_Facebook
+ */
 class SocialShare_Facebook
 {
     public function __construct(SocialShare $master) {
         $this->master = $master;
     }
-	public function all($links = array()) {
+
+    /**
+     * @param array $links
+     * @return array
+     * @throws SocialShare_Error
+     */
+    public function all($links = array()) {
 		if(is_array($links))
 		{
 			$_params = array("links" => implode(',', $links));
@@ -41,7 +50,12 @@ class SocialShare_Facebook
 		else
 			throw new SocialShare_Error('Array should be passed');
     }
-	
+
+    /**
+     * @param array $links
+     * @return array
+     * @throws SocialShare_Error
+     */
     public function shares($links = array()) {
 		if(is_array($links))
 		{
@@ -65,8 +79,13 @@ class SocialShare_Facebook
 		else
 			throw new SocialShare_Error('Array should be passed');
     }
-	
-	public function likes($links = array()) {
+
+    /**
+     * @param array $links
+     * @return array
+     * @throws SocialShare_Error
+     */
+    public function likes($links = array()) {
         if(is_array($links))
 		{
 			$_params = array("links" => implode(',', $links));
@@ -89,8 +108,13 @@ class SocialShare_Facebook
 		else
 			throw new SocialShare_Error('Array should be passed');
     }
-	
-	public function comments($links = array()) {
+
+    /**
+     * @param array $links
+     * @return array
+     * @throws SocialShare_Error
+     */
+    public function comments($links = array()) {
         if(is_array($links))
 		{
 			$_params = array("links" => implode(',', $links));
@@ -113,8 +137,13 @@ class SocialShare_Facebook
 		else
 			throw new SocialShare_Error('Array should be passed');
     }
-	
-	public function clicks($links = array()) {
+
+    /**
+     * @param array $links
+     * @return array
+     * @throws SocialShare_Error
+     */
+    public function clicks($links = array()) {
         if(is_array($links))
 		{
 			$_params = array("links" => implode(',', $links));
@@ -138,7 +167,29 @@ class SocialShare_Facebook
 			throw new SocialShare_Error('Array should be passed');
     }
 
-	public function totalShares($links = array()) {
+
+    /**
+     * @param array $links
+     * @return array
+     * @throws SocialShare_Error
+     */
+    public function totalAll($links = array()) {
+        if(is_array($links))
+        {
+            $_params = array("links" => implode(',', $links));
+            $output = $this->master->call('facebook', $_params);
+            return array("shares" => $output['shares'], "likes" => $output['likes'], "comments" => $output['comments'], "clicks" => $output['clicks']);
+        }
+        else
+            throw new SocialShare_Error('Array should be passed');
+    }
+
+    /**
+     * @param array $links
+     * @return int
+     * @throws SocialShare_Error
+     */
+    public function totalShares($links = array()) {
 		if(is_array($links))
 		{
 			$_params = array("links" => implode(',', $links));
@@ -148,19 +199,13 @@ class SocialShare_Facebook
 		else
 			throw new SocialShare_Error('Array should be passed');
     }
-	
-	public function totalAll($links = array()) {
-        if(is_array($links))
-		{
-			$_params = array("links" => implode(',', $links));
-			$output = $this->master->call('facebook', $_params);
-			return array("shares" => $output['shares'], "likes" => $output['likes'], "comments" => $output['comments'], "clicks" => $output['clicks']);
-		}
-		else
-			throw new SocialShare_Error('Array should be passed');
-    }
-	
-	public function totalLikes($links = array()) {
+
+    /**
+     * @param array $links
+     * @return int
+     * @throws SocialShare_Error
+     */
+    public function totalLikes($links = array()) {
         if(is_array($links))
 		{
 			$_params = array("links" => implode(',', $links));
@@ -170,8 +215,13 @@ class SocialShare_Facebook
 		else
 			throw new SocialShare_Error('Array should be passed');
     }
-	
-	public function totalComments($links = array()) {
+
+    /**
+     * @param array $links
+     * @return int
+     * @throws SocialShare_Error
+     */
+    public function totalComments($links = array()) {
         if(is_array($links))
 		{
 			$_params = array("links" => implode(',', $links));
@@ -181,8 +231,13 @@ class SocialShare_Facebook
 		else
 			throw new SocialShare_Error('Array should be passed');
     }
-	
-	public function totalClicks($links = array()) {
+
+    /**
+     * @param array $links
+     * @return int
+     * @throws SocialShare_Error
+     */
+    public function totalClicks($links = array()) {
         if(is_array($links))
 		{
 			$_params = array("links" => implode(',', $links));

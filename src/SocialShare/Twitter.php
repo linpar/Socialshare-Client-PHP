@@ -1,10 +1,18 @@
 <?php
 
+/**
+ * Class SocialShare_Twitter
+ */
 class SocialShare_Twitter {
     public function __construct(SocialShare $master) {
         $this->master = $master;
     }
-	
+
+    /**
+     * @param array $links
+     * @return array
+     * @throws SocialShare_Error
+     */
     public function shares($links = array()) {
 		if(is_array($links))
 		{
@@ -28,8 +36,13 @@ class SocialShare_Twitter {
 		else
 			throw new SocialShare_Error('Array of zero length passed');
     }
-	
-	public function totalShares($links = array()) {
+
+    /**
+     * @param array $links
+     * @return int
+     * @throws SocialShare_Error
+     */
+    public function totalShares($links = array()) {
 		if(is_array($links))
 		{
 			$_params = array("links" => implode(',', $links));

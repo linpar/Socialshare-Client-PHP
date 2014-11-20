@@ -1,6 +1,7 @@
 SocialShare API PHP Client
 ==========================
 [![Latest Stable Version](https://poser.pugx.org/linpar/socialshare/v/stable.svg)](https://packagist.org/packages/linpar/socialshare) [![Total Downloads](https://poser.pugx.org/linpar/socialshare/downloads.svg)](https://packagist.org/packages/linpar/socialshare) [![Latest Unstable Version](https://poser.pugx.org/linpar/socialshare/v/unstable.svg)](https://packagist.org/packages/linpar/socialshare) [![License](https://poser.pugx.org/linpar/socialshare/license.svg)](https://packagist.org/packages/linpar/socialshare)
+
 SocialShare API can be used to fetch number of shares for a single or multiple URLs on social platforms.
 
 Features

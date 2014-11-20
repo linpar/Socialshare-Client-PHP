@@ -57,7 +57,7 @@ require 'vendor/autoload.php';
 
 Simple example
 ============
-Note: To get API key, send an email to nitish.gundherva@nsitonline.in
+*Note: To get API key, send an email to nitish.gundherva@nsitonline.in*
 
 1) Fetch number of shares/click/comments/likes of a URL on Facebook/Twitter (in case of shares).
 ```php

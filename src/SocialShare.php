@@ -3,6 +3,7 @@
 require_once 'SocialShare/Exceptions.php';
 require_once 'SocialShare/Facebook.php';
 require_once 'SocialShare/Twitter.php';
+require_once 'SocialShare/GooglePlus.php';
 
 class SocialShare
 {

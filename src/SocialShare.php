@@ -29,6 +29,7 @@ class SocialShare
 
         $this->facebook = new SocialShare_Facebook($this);
         $this->twitter = new SocialShare_Twitter($this);
+        $this->twitter = new SocialShare_GooglePlus($this);
     }
 
     public function __destruct()

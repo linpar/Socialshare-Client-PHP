@@ -57,9 +57,11 @@ require 'vendor/autoload.php';
 
 Simple example
 ============
+Note: To get API key, send an email to nitish.gundherva@nsitonline.in
+
 1) Fetch number of shares/click/comments/likes of a URL on Facebook/Twitter (in case of shares).
 ```php
-$socialShare = new SocialShare();
+$socialShare = new SocialShare(API_KEY);
 print_r('<pre>');
 print_r($socialShare->facebook->shares(array('http://github.com'))); // Replace facebook with twitter to calculate shares on Twitter
 print_r($socialShare->facebook->clicks(array('http://github.com')));
@@ -93,7 +95,7 @@ Array
 
 2) Fetch number of shares/click/comments/likes of multiple URLs on Facebook/Twitter (in case of shares).
 ```php
-$socialShare = new SocialShare();
+$socialShare = new SocialShare(API_KEY);
 print_r('<pre>');
 print_r($socialShare->facebook->shares(array('http://github.com', 'http://google.com'))); // Replace facebook with twitter to calculate shares on Twitter
 print_r($socialShare->facebook->clicks(array('http://github.com', 'http://google.com')));
@@ -167,7 +169,7 @@ Array
 
 3) Fetch combined total number of shares/clicks/comments/likes of multiple URLs on Facebook/Twitter (in case of shares).
 ```php
-$socialShare = new SocialShare();
+$socialShare = new SocialShare(API_KEY);
 print_r('<pre>');
 print_r($socialShare->facebook->totalShares(array('http://github.com', 'http://google.com')) ."\n"); // Replace facebook with twitter to calculate shares on Twitter
 print_r($socialShare->facebook->totalClicks(array('http://github.com', 'http://google.com')) ."\n");

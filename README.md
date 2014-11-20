@@ -188,5 +188,5 @@ Output:
 TODO
 ============
 
-* Add support for more platforms (Google Plus, Pinterest etc)
+* Add support for more platforms (Pinterest etc)
 

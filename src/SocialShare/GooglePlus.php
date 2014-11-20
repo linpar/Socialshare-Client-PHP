@@ -22,7 +22,9 @@ class SocialShare_GooglePlus {
             if($totalLinks == 0)
                 throw new SocialShare_Error('Array of zero length passed');
             else if($totalLinks == 1)
-                return array("link" => $output['response']['url'], "shares" => $output['response']['count']);
+            {
+                return array("link" => $output['response'][0]['url'], "shares" => $output['response'][0]['count']);
+            }
             else
             {
                 $return = array();

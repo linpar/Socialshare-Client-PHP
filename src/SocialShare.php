@@ -17,9 +17,18 @@ class SocialShare
     // Debug
     public $debug = false;
 
-    public function __construct()
+    // Private Key (DO NOT EDIT)
+    private $private_key = '242249c439ed7697d44a4b045d97d2229b7e1854c3ff8dd668c779013653913572e';
+
+    public function __construct($public_key = NULL)
 	{
         $this->ch = curl_init();
+        $hash = hash_hmac('sha256', $public_key, $this->private_key);
+        $headers = array(
+            'X-Public: '.$public_key,
+            'X-Hash: '.$hash
+        );
+        curl_setopt($this->ch, CURLOPT_HTTPHEADER,$headers);
         curl_setopt($this->ch, CURLOPT_USERAGENT, 'SocialShare-PHP/1.0.0');
         curl_setopt($this->ch, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($this->ch, CURLOPT_HEADER, false);
@@ -29,7 +38,7 @@ class SocialShare
 
         $this->facebook = new SocialShare_Facebook($this);
         $this->twitter = new SocialShare_Twitter($this);
-        $this->twitter = new SocialShare_GooglePlus($this);
+        $this->googleplus = new SocialShare_GooglePlus($this);
     }
 
     public function __destruct()
@@ -87,7 +96,11 @@ class SocialShare
         $result = json_decode($response_body, true);
         if($result === null)
 			throw new SocialShare_Error('We were unable to decode the JSON response from the SocialShare API: ' . $response_body);
-        
+
+        if($info['http_code'] == 403)
+        {
+            throw new SocialShare_Error('Authentication error');
+        }
         if($info['http_code'] != 200)
 		{
             throw new SocialShare_Error('We received an unexpected error');

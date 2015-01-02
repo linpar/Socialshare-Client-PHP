@@ -34,7 +34,7 @@ file:
 ```json
 {
   "require" : {
-    "linpar/socialshare": "dev-master"
+    "linpar/socialshare": "1.*"
   }
 }
 ```
